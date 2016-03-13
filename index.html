@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		.blue {
+			color:blue;
+		}
+		.red {
+			color:red;
+		}
+
+		</style>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<div id="view"></div>
+			</div>
+		</div>
+
+	<!-- <contact-list></contact-list>
+
+	<people-list></people-list>
+	<people-count></people-count> -->
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/riot/riot.min.js"></script>
+	<script src="tags/all.js"></script>
+	<script src="app.js"></script>
+	<script>
+		// riot.mount('hello-world', {greet: 'Bryan'})
+		// riot.mount('hello-form')
+		// var peeps = [{first:"Bryan",last:"Borst"}, {first:"Alex",last:"Borst"}]
+
+		// riot.mount('contact-list', {callback:tagCallback})
+
+		function tagCallback(theTag) {
+
+			console.info('Callback executed');
+
+			// New request
+			var request = new XMLHttpRequest();
+			request.open('GET', 'people.json', true);
+			request.onload = function() {
+
+				// Status 200 means all good
+				if (request.status == 200) {
+					// set the data from parsed json
+					var data = JSON.parse(request.responseText);
+					// Trigger event: Data Loaded and pass in people. Contact list listens for event called 'data_loaded' and is looking for data as an argument
+					theTag.trigger('data_loaded', data.people)
+				}
+			}
+			// Simulates slow loading time
+			// setTimeout(function() {
+				request.send();
+			// }, 2000);
+			
+		}
+	</script>
+	</body>
+</html>

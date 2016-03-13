@@ -1,0 +1,52 @@
+{
+	"people": [
+		{
+			"first":"Bryan",
+			"last":"Borst",
+			"age":"40",
+			"bio":"Bryan's bio"
+		}, 
+		{
+			"first":"Alex",
+			"last":"Borst",
+			"age":"25",
+			"bio":"Alex's bio"
+		}, 
+		{
+			"first":"Some",
+			"last":"One",
+			"age":"77",
+			"bio":"Some One's bio"
+		}, 
+		{
+			"first":"This",
+			"last":"Guy",
+			"age":"17",
+			"bio":"This Guy's bio"
+		}, 
+		{
+			"first":"Some",
+			"last":"Chick",
+			"age":"34",
+			"bio":"Some Chicks's bio"
+		}, 
+		{
+			"first":"Some",
+			"last":"Dude",
+			"age":"70",
+			"bio":"Some Dude's bio"
+		}, 
+		{
+			"first":"Test",
+			"last":"Tester",
+			"age":"18",
+			"bio":"Test's bio"
+		}, 
+		{
+			"first":"Testing",
+			"last":"Testies",
+			"age":"22",
+			"bio":"Testing's bio"
+		}
+	]
+}

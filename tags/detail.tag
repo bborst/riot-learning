@@ -1,0 +1,3 @@
+<people-detail>
+
+</people-detail>
